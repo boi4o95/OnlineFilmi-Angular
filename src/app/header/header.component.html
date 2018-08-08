@@ -13,13 +13,16 @@
         </a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" routerLink="/filmi">Филми </a>
+        <a class="nav-link" routerLink="/films">Филми </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" routerLink="/contact">Контакт </a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item ">
+          <a class="nav-link" routerLink="/films/create">add film</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" *ngIf="!authService.checkIfLoggedIn()" routerLink="/auth/login">Login</a>
       </li>

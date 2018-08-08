@@ -9,17 +9,12 @@ export class ErrorInterceptor implements HttpInterceptor {
     constructor (private toastr : ToastrService) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return next.handle(req).pipe(catchError(err => {
+        return next.handle(req).pipe(catchError((err : HttpErrorResponse) => {
             err.error.errors
             switch(err.status){
                 case 401:
-                this.toastr.error("Some message!", "Warning!")
-                break;
-                case 400:
-                const message = Object.keys(err.error.errors)
-                    .map(e => err.error.errors[e])
-                    .join('\r\n')
-                this.toastr.error(message, "Warning!")    
+                let message = err.error.description
+                this.toastr.error(message, "Warning!")
                 break;
             }
 

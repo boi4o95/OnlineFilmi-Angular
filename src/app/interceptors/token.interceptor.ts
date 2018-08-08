@@ -31,12 +31,13 @@ export class TokenInterceptor implements HttpInterceptor {
 
         return next.handle(req)
             .pipe(tap((event: HttpEvent<any>) => {
-                debugger
                 if (event instanceof HttpResponse && req.url.endsWith('login')) {
                     this.successfulLogin(event['body'])
+                    this.toastr.success("Login successful.", "Success!")
                 }
 
                 if (event instanceof HttpResponse && req.url.endsWith(appKey)) {
+                    this.toastr.success("Register successful.", "Success!")
                     this.router.navigate(['/auth/login'])
                 }
             }))
