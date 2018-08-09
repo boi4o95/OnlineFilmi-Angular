@@ -4,7 +4,6 @@ import { LoginModel } from "./models/login.model"
 import { RegisterModel } from "./models/register.model"
 
 const appKey = "kid_B1GOKdwHX" 
-const appSecret = "e677edfbd0344735b9e0f3731f1ae0ec" 
 const registerUrl = `https://baas.kinvey.com/user/${appKey}`
 const loginUrl = `https://baas.kinvey.com/user/${appKey}/login`
 const logoutUrl = `https://baas.kinvey.com/user/${appKey}/_logout`
