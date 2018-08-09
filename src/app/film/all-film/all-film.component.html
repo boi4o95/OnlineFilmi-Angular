@@ -1,3 +1,15 @@
-<p>
-  all-film works!
-</p>
+<div class="films">
+  <h3 class="title">Всички филми</h3>
+  <div class="row">
+    <div *ngFor="let f of films | async" class="col-md-3">
+      <div class="card border-info mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+          <img class="card-img-top" src="{{f.imageUrl}}" alt="Card image">
+        </div>
+        <div class="card-header" style="text-align: center">{{f.title}}</div>
+        <br>
+        <a routerLink="/details/{{f._id}}" class="btn btn-primary">View Film</a>
+      </div>
+    </div>
+  </div>
+</div>

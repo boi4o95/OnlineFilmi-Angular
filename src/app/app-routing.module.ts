@@ -10,13 +10,13 @@ import { AllFilmComponent } from './film/all-film/all-film.component';
 import { CreateFilmComponent } from './film/create-film/create-film.component';
 
 const route : Route[] = [
-    { path: '', component: HomeComponent, canActivate: [ AuthGuard ]},
+    { path: '', component: HomeComponent },
     { path:'auth', children: [
         { path: 'login', component: SigninComponent },
         { path: 'register', component: SignupComponent }
     ]},
     { path: 'films', children: [
-        { path: '', component: AllFilmComponent },
+        { path: '', component: AllFilmComponent, canActivate: [ AuthGuard ] },
         { path: 'create', component: CreateFilmComponent }
     ]}
 ]

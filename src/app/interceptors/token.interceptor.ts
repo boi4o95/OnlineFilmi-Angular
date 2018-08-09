@@ -40,8 +40,7 @@ export class TokenInterceptor implements HttpInterceptor {
                     this.toastr.success("Register successful.", "Success!")
                     this.router.navigate(['/auth/login'])
                 }
-
-                if (event instanceof HttpResponse && req.url.endsWith('films')) {
+                if (event instanceof HttpResponse && req.url.endsWith('films') && req.method.endsWith('POST')) {
                     console.log(req)
                     this.toastr.success("Create film success..", "Success!")
                     this.router.navigate(['/films'])
@@ -52,7 +51,7 @@ export class TokenInterceptor implements HttpInterceptor {
     private successfulLogin(data) {
         localStorage.setItem('authtoken', data._kmd.authtoken)
         localStorage.setItem('username', data.username)
-        this.router.navigate([''])
+        this.router.navigate(['/films'])
     }
 
 }
