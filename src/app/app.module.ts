@@ -18,6 +18,7 @@ import { FilmDetailsComponent } from './film/film-details/film-details.component
 import { AuthGuard } from './auth/guards/auth.guard';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { SafePipeModule } from 'safe-pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     FilmDetailsComponent
   ],
   imports: [
+    SafePipeModule,
     BrowserModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,

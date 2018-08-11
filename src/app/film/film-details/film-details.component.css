@@ -1,0 +1,18 @@
+.content {
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+   
+}
+
+.content img {
+    margin-right: 15px;
+    float: left;
+}
+
+#videocontainer iframe {
+    width: 800px;
+    height: 500px;
+    margin-left: 15%;
+}
+
