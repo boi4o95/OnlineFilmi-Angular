@@ -21,7 +21,7 @@ export class FilmDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.film = this.filmService.getFilmDetails(this._id)
+    this.film = this.filmService.getFilmById(this._id)
   }
-
+  
 }

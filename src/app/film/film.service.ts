@@ -6,9 +6,7 @@ import { FilmModel } from './models/film.model';
 const appKey = "kid_B1GOKdwHX"
 const filmsUrl = `https://baas.kinvey.com/appdata/${appKey}/films`
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class FilmService { 
     constructor(private http : HttpClient) { }
 
@@ -20,11 +18,15 @@ export class FilmService {
         return this.http.get<FilmModel[]>(filmsUrl)
     }
 
-    getFilmDetails(_id : string) {
+    getFilmById(_id : string) {
         return this.http.get<FilmModel>(filmsUrl + `/${_id}`)
     }
 
     deleteFilm(_id : string) {
         return this.http.delete(filmsUrl + `/${_id}`)
+    }
+
+    editFilm(_id : string, body) {
+        return this.http.put(filmsUrl + `/${_id}`, body)
     }
 }
