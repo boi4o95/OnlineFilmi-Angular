@@ -6,6 +6,8 @@
 }
 
 .content img {
+    width: 500px;
+    height: 800px;
     margin-right: 15px;
     float: left;
 }

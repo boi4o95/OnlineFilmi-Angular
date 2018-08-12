@@ -16,4 +16,7 @@ export class AllFilmComponent implements OnInit {
     this.films = this.filmService.getAllFilm()
   }
 
+  delete(_id : string) {
+    this.filmService.deleteFilm(_id).subscribe()
+  }
 }

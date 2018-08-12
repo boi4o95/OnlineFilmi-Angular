@@ -41,9 +41,12 @@ export class TokenInterceptor implements HttpInterceptor {
                     this.router.navigate(['/auth/login'])
                 }
                 if (event instanceof HttpResponse && req.url.endsWith('films') && req.method.endsWith('POST')) {
-                    console.log(req)
-                    this.toastr.success("Create film success..", "Success!")
+                    this.toastr.success("Create film success.", "Success!")
                     this.router.navigate(['/films'])
+                }
+                if (event instanceof HttpResponse && req.method.endsWith('DELETE')) {
+                    this.toastr.success("Delete film success.", "Success!")
+                    this.router.navigate(['/'])
                 }
             }))
     }
