@@ -13,7 +13,6 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { AuthGuard } from './auth/guards/auth.guard';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 
@@ -35,7 +34,6 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     FilmModule
   ],
   providers: [ 
-    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

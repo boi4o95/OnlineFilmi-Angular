@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FilmService } from '../film.service';
 import { FilmModel } from '../models/film.model';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-all-film',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class AllFilmComponent implements OnInit {
   films :  Observable<FilmModel[]>
-  constructor(private filmService : FilmService) { }
+  constructor(private filmService : FilmService, private authService : AuthService) { }
 
   ngOnInit() {
     this.films = this.filmService.getAllFilm()

@@ -24,9 +24,17 @@ export class AuthService {
         return this.http.post(logoutUrl, {})
     }
 
+    getUsername() {
+        return localStorage.getItem('username') 
+    }
+
+
     checkIfLoggedIn() {
         return localStorage.getItem('authtoken') !== null
     }
 
-    
+  
+    checkIfAdmin() {
+        return localStorage.getItem('roles') !== null
+    }
 }

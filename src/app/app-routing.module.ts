@@ -18,7 +18,7 @@ const route : Route[] = [
         { path: 'register', component: SignupComponent }
     ]},
     { path: 'films', children: [
-        { path: '', component: AllFilmComponent, canActivate: [ AuthGuard ] },
+        { path: 'all', component: AllFilmComponent, canActivate: [ AuthGuard ] },
         { path: 'create', component: CreateFilmComponent },
         { path: 'details/:_id', component: FilmDetailsComponent },
         { path: 'edit/:_id', component: EditFilmComponent}
