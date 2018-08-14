@@ -43,7 +43,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
                 if (event instanceof HttpResponse && req.url.endsWith('films') && req.method.endsWith('POST')) {
                     this.toastr.success("Create film success.", "Success!")
-                    this.router.navigate(['/films/all'])
+                    this.router.navigate(['/films'])
                 }
 
                 if (event instanceof HttpResponse && req.method.endsWith('DELETE')) {
@@ -53,7 +53,7 @@ export class TokenInterceptor implements HttpInterceptor {
                 
                 if (event instanceof HttpResponse && req.method.endsWith('PUT')) {
                     this.toastr.success("Edit film success.", "Success!")
-                    this.router.navigate(['/films/all'])
+                    this.router.navigate(['/films'])
                 }
             }))
     }
@@ -66,7 +66,7 @@ export class TokenInterceptor implements HttpInterceptor {
             localStorage.setItem('roles', data._kmd.roles)
         }
 
-        this.router.navigate(['/films/all'])
+        this.router.navigate(['/films'])
     }
 
 }

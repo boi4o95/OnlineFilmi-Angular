@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core'
 import { filmComponet } from './index';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { FilmService } from './film.service';
 import { SafePipeModule } from 'safe-pipe';
+import { FilmRoutingModule } from './film-routing.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -12,9 +12,9 @@ import { SafePipeModule } from 'safe-pipe';
         ...filmComponet
     ],
     imports: [
-        BrowserModule,
+        CommonModule,
         FormsModule,
-        RouterModule,
+        FilmRoutingModule,
         SafePipeModule
     ],
     providers: [
