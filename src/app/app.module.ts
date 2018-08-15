@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
@@ -21,7 +22,8 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ContactsComponent
   ],
   imports: [
     ToastrModule.forRoot(),
