@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr'
-import { CustomFormsModule } from 'ng2-validation'
 import { AuthModule } from './auth/auth.module';
 import { FilmModule } from './film/film.module';
 
@@ -28,7 +27,6 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
   imports: [
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    CustomFormsModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,

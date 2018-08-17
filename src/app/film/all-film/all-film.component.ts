@@ -11,10 +11,17 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class AllFilmComponent implements OnInit {
   films :  Observable<FilmModel[]>
+  pageSize : number = 8
+  currentPage : number = 1
+
   constructor(private filmService : FilmService, private authService : AuthService) { }
 
   ngOnInit() {
     this.films = this.filmService.getAllFilm()
+  }
+
+  pageChanged(page) {
+    this.currentPage = page
   }
 
   delete(_id : string) {

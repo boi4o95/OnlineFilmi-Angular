@@ -5,6 +5,8 @@ import { FilmService } from './film.service';
 import { SafePipeModule } from 'safe-pipe';
 import { FilmRoutingModule } from './film-routing.module';
 import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination'
+import { CustomFormsModule } from 'ng2-validation';
 
 
 @NgModule({
@@ -13,9 +15,11 @@ import { CommonModule } from '@angular/common';
     ],
     imports: [
         CommonModule,
+        NgxPaginationModule,
         FormsModule,
         FilmRoutingModule,
-        SafePipeModule
+        SafePipeModule,
+        CustomFormsModule
     ],
     providers: [
         FilmService
