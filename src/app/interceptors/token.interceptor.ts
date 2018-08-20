@@ -47,7 +47,7 @@ export class TokenInterceptor implements HttpInterceptor {
                 }
 
                 if (event instanceof HttpResponse && req.method.endsWith('DELETE')) {
-                    this.toastr.success("Delete film success.", "Success!")
+                    this.toastr.success("Delete success.", "Success!")
                     this.router.navigate(['/'])
                 }
                 
@@ -55,8 +55,13 @@ export class TokenInterceptor implements HttpInterceptor {
                     this.toastr.success("Edit film success.", "Success!")
                     this.router.navigate(['/films'])
                 }
-                if (event instanceof HttpResponse && req.url.endsWith('contact') && req.method.endsWith('POST')) {
+                if (event instanceof HttpResponse && req.url.endsWith('request') && req.method.endsWith('POST')) {
                     this.toastr.success("Success.", "Success!")
+                    this.router.navigate(['/films'])
+                }
+
+                if(req.url === 'https://api.emailjs.com/api/v1.0/email/send'){
+                    this.toastr.success("Send email successful.", "Success!")
                     this.router.navigate(['/'])
                 }
             }))

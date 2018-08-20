@@ -6,12 +6,13 @@ import { FormsModule } from '@angular/forms'
 import { ToastrModule } from 'ngx-toastr'
 import { AuthModule } from './auth/auth.module';
 import { FilmModule } from './film/film.module';
+import { RequestModule } from './requestForFilms/request.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { ContactsComponent } from './contacts/contacts.component';
+import { ContactsComponent } from './contacts/contact/contacts.component';
 
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
@@ -31,7 +32,8 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
-    FilmModule
+    FilmModule,
+    RequestModule
   ],
   providers: [ 
     {

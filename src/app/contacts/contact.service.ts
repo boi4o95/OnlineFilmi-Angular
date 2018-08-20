@@ -2,17 +2,27 @@ import { Injectable } from "@angular/core"
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { ContactModel } from "./model/contact.model";
 
-const appKey = "kid_B1GOKdwHX"
-const contactUrl = `https://baas.kinvey.com/appdata/${appKey}/contact`
-   
+
+const contactUrl = "https://api.emailjs.com/api/v1.0/email/send"
+
 @Injectable({
     providedIn: 'root'
 })
 export class ContactService {
-    constructor(private http : HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-    
-    post(model : ContactModel) {
-        return this.http.post(contactUrl, model)
+
+    post(model: ContactModel) {
+        var form = {
+            service_id: "gmail",
+            template_id: "template_ivtT1ISk",
+            user_id: "user_GuwBPJ7ATUPSP7gSS97JS",
+            template_params: {
+                email: model.email,
+                message: model.message
+            },
+        }
+
+        return this.http.post(contactUrl, form)
     }
 }

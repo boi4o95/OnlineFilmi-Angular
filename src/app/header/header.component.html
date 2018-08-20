@@ -15,25 +15,31 @@
       <li class="nav-item ">
         <a class="nav-link" routerLink="/films">Филми </a>
       </li>
+      <li class="nav-item " *ngIf="authService.checkIfLoggedIn()" >
+        <a class="nav-link" routerLink="/request/create" *ngIf="!authService.checkIfAdmin()">Предложи филм </a>
+      </li>
+      <li class="nav-item " *ngIf="authService.checkIfAdmin()">
+        <a class="nav-link" routerLink="/request/list">Предложени филми </a>
+      </li>
       <li class="nav-item ">
         <a class="nav-link" routerLink="/contact">Контакт </a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item ">
-          <a class="nav-link" id="addFilm" *ngIf="authService.checkIfAdmin()" routerLink="/films/create" >add film</a>
+      <li class="nav-item " *ngIf="authService.checkIfAdmin()">
+          <a class="nav-link" id="addFilm" routerLink="/films/create" >add film</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" *ngIf="!authService.checkIfLoggedIn()" routerLink="/auth/login">Login</a>
+      <li class="nav-item" *ngIf="!authService.checkIfLoggedIn()">
+        <a class="nav-link" routerLink="/auth/login">Login</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" *ngIf="!authService.checkIfLoggedIn()" routerLink="/auth/register">Register</a>
+      <li class="nav-item" *ngIf="!authService.checkIfLoggedIn()">
+        <a class="nav-link" routerLink="/auth/register">Register</a>
       </li>
-      <li class="nav-item">
-        <strong class="nav-link" *ngIf="authService.checkIfLoggedIn()" >Hello, {{authService.getUsername()}}</strong>
+      <li class="nav-item" *ngIf="authService.checkIfLoggedIn()">
+        <strong class="nav-link">Hello, {{authService.getUsername()}}</strong>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" *ngIf="authService.checkIfLoggedIn()" (click)="logout()">Logout</a>
+      <li class="nav-item"  *ngIf="authService.checkIfLoggedIn()">
+        <a class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>

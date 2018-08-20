@@ -16,6 +16,10 @@ export class ErrorInterceptor implements HttpInterceptor {
                 let message = err.error.description
                 this.toastr.error(message, "Warning!")
                 break;
+                case 409:
+                let error = err.error.description
+                this.toastr.error(error, "Warning!")
+                break;
             }
 
             return throwError(err)
