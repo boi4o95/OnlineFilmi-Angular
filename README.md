@@ -1,5 +1,25 @@
 # OnlineFilmi
 
+#### An application that can watch online filmi.
+
+#### The application is split into three parts.
+ 
+## Public part:
+- Guests can view home.
+- Guests can send email from contact form.
+
+## Private part ( User area ):
+- Users can view all films.
+- Users can watch online films.
+- Users can send request for films.
+
+## Administration part:
+- Admins can add films.
+- Admins can delete films.
+- Admins can edit films.
+- Admins can view all request for films and delete.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
