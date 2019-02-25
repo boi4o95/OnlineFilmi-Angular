@@ -1,0 +1,18 @@
+<div class="film" *ngIf="film | async as f">
+  <div class="content">
+    <img src="{{f.imageUrl}}" alt="" />
+    <h3>{{f.title}}</h3>
+    <h5>Годига: {{f.year}}</h5>
+    <br>
+    <p>
+     {{f.description}}
+    </p>
+    <br>
+    <span>Жанр: {{f.genre}}</span>
+  </div>
+  <div id="videocontainer">
+      <iframe [src]="f.filmUrl | safe: 'resourceUrl'" width="100%" height="100%" border="0" frameborder="0" scrolling="no"
+      allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" oallowfullscreen="" msallowfullscreen=""></iframe>
+  </div>
+  <br> <br>
+</div>

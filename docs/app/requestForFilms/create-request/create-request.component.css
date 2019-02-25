@@ -1,0 +1,38 @@
+#row {
+    margin-top:50px;
+    margin-left: 30%;
+    color: black;
+}
+
+#btn {
+    margin-top:10px;
+    margin-bottom: 50px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(121, 36, 47);
+    border-right:  1px solid rgb(121, 36, 47);
+    border-left:  1px solid rgb(121, 36, 47);
+    border-top:  1px solid rgb(121, 36, 47);
+    text-align: center;
+    transition: 0.1s all ease-in-out;
+    color: black;
+}
+
+#container {
+    width: 60%;
+    margin: 0 auto;
+    -webkit-box-shadow: -11px 0 11px 0 #888888, 11px 2px 11px 0 #888888;
+    background: gainsboro;
+}
+
+#cont {
+    width: 143%;
+    height: 200px;
+    margin: 0 auto;
+    display: inline-block;
+    margin-left: -43%
+}

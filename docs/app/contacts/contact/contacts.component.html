@@ -1,0 +1,35 @@
+<div id="contact">
+    <section id="mainsection">
+        <div id="row">
+            <img id="cont" src="../../assets/contacts.jpg" alt="logo">
+            <h1>Контакт с нас</h1>
+            <form #contactForm="ngForm" (ngSubmit)="contact()" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="form-group">
+                <strong for="email" class="col-md-10 control-label">Ваш имейл адрес:</strong>
+                <div class="col-md-15">
+                  <input type="text" class="form-control" name="email" [(ngModel)]="bindingModel.email" 
+                  #email="ngModel" email required>
+                  <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                    Email address is invalid.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <strong for="message" class="col-md-6 control-label">Съобщение:</strong>
+                <div class="col-md-15">
+                  <textarea class="form-control" type="text" id="exampleTextarea" rows="8" name="message" 
+                  [(ngModel)]="bindingModel.message" #message="ngModel" required>
+                  </textarea>
+                  <div [hidden]="message.valid || message.pristine" class="alert alert-danger">
+                    Message is required.
+                  </div>
+                </div>
+              </div>
+              <div id="btn" class="col-md-offset-3 col-md-9">
+                <button type="submit" class="btn btn-info" [disabled]="contactForm.form.invalid" >изпрати</button>
+              </div>
+              <br> 
+            </form>
+          </div>
+    </section>
+</div>
