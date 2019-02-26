@@ -34,6 +34,7 @@ export class TokenInterceptor implements HttpInterceptor {
                 if (event instanceof HttpResponse && req.url.endsWith('login')) {
                     this.successfulLogin(event['body'])
                     this.toastr.success("Login successful.", "Success!")
+                    window.location.reload()
                 }
 
                 if (event instanceof HttpResponse && req.url.endsWith(appKey)) {
