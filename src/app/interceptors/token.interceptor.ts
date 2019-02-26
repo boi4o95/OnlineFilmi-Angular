@@ -39,7 +39,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
                 if (event instanceof HttpResponse && req.url.endsWith(appKey)) {
                     this.toastr.success("Register successful.", "Success!")
-                    this.router.navigate(['/auth/login'])
+                    this.router.navigate(['/login'])
                 }
 
                 if (event instanceof HttpResponse && req.url.endsWith('films') && req.method.endsWith('POST')) {

@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
         localStorage.clear()
         this.toastr.success("Logout successful.", "Success!")
        
-        this.router.navigate(['/auth/login'])
+        this.router.navigate(['/login'])
         window.location.reload()
       }
     )

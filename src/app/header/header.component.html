@@ -30,10 +30,10 @@
           <a class="nav-link" id="addFilm" routerLink="/films/create" >add film</a>
       </li>
       <li class="nav-item" *ngIf="!checkStatus">
-        <a class="nav-link" routerLink="/auth/login">Login</a>
+        <a class="nav-link" routerLink="/login">Login</a>
       </li>
       <li class="nav-item" *ngIf="!checkStatus">
-        <a class="nav-link" routerLink="/auth/register">Register</a>
+        <a class="nav-link" routerLink="/register">Register</a>
       </li>
       <li class="nav-item" *ngIf="checkStatus">
         <strong class="nav-link">Hello, {{authService.getUsername()}}</strong>
